@@ -1,6 +1,5 @@
 const selectBusiness = () => {
-  // Map the selectors to the business types
-  const businessSelectors = {
+  let s = {
     ".business.florists": ".vendor.florists",
     ".business.djs": ".vendor.djs",
     ".business.transportation": ".vendor.transportation",
@@ -12,31 +11,17 @@ const selectBusiness = () => {
     ".business.hairdressers": ".vendor.hairdressers",
     ".business.clothing": ".vendor.clothing",
   };
-
-  for (const [selector, businessTypeSelector] of Object.entries(
-    businessSelectors,
-  )) {
-    //
-    //
-    //
-    const businessCards = document.querySelectorAll(selector);
-    businessCards.forEach((card) => {
-      card.addEventListener("click", () => {
-        document.querySelectorAll(".business").forEach((businessCard) => {
-          businessCard.classList.add("hidden");
-          businessCard.classList.remove("visible");
-        });
-
-        document
-          .querySelectorAll(businessTypeSelector)
-          .forEach((vendorCard) => {
-            vendorCard.classList.remove("hidden");
-            vendorCard.classList.add("visible");
+  for (let [e, r] of Object.entries(s)) {
+    let i = document.querySelectorAll(e);
+    i.forEach((s) => {
+      s.addEventListener("click", () => {
+        document.querySelectorAll(".business").forEach((s) => {
+          s.classList.add("hidden"), s.classList.remove("visible");
+        }),
+          document.querySelectorAll(r).forEach((s) => {
+            s.classList.remove("hidden"), s.classList.add("visible");
           });
       });
     });
-    //
-    //
-    //
   }
 };

@@ -1,5 +1,5 @@
 const selectNavbar = () => {
-  const navbarBusinesses = {
+  let e = {
     ".nav-item.florists": ".vendor.florists",
     ".nav-item.photographers": ".vendor.photographers",
     ".nav-item.videographers": ".vendor.videographers",
@@ -11,25 +11,19 @@ const selectNavbar = () => {
     ".nav-item.hairdressers": ".vendor.hairdressers",
     ".nav-item.clothing": ".vendor.clothing",
   };
-
-  for (const [selector, businessType] of Object.entries(navbarBusinesses)) {
-    const navbarBusiness = document.querySelectorAll(selector);
-    navbarBusiness.forEach((navLink) => {
-      navLink.addEventListener("click", () => {
-        document.querySelectorAll(".business").forEach((businessCard) => {
-          businessCard.classList.add("hidden");
-          businessCard.classList.remove("visible");
-        });
-
-        document.querySelectorAll(".vendor").forEach((vendor) => {
-          vendor.classList.remove("visible");
-          vendor.classList.add("hidden");
-        });
-
-        document.querySelectorAll(businessType).forEach((vendorCard) => {
-          vendorCard.classList.remove("hidden");
-          vendorCard.classList.add("visible");
-        });
+  for (let [r, s] of Object.entries(e)) {
+    let i = document.querySelectorAll(r);
+    i.forEach((e) => {
+      e.addEventListener("click", () => {
+        document.querySelectorAll(".business").forEach((e) => {
+          e.classList.add("hidden"), e.classList.remove("visible");
+        }),
+          document.querySelectorAll(".vendor").forEach((e) => {
+            e.classList.remove("visible"), e.classList.add("hidden");
+          }),
+          document.querySelectorAll(s).forEach((e) => {
+            e.classList.remove("hidden"), e.classList.add("visible");
+          });
       });
     });
   }
