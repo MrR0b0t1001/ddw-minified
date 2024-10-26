@@ -510,8 +510,8 @@ body {
   );
 }
 .purpose-container {
-  width: 65%;
-  height: 90%;
+  width: 55%;
+  height: 80%;
   background-color: rgba(255, 255, 255, 0.1);
   -webkit-backdrop-filter: blur(100px);
   backdrop-filter: blur(100px);
@@ -540,6 +540,9 @@ body {
 .whatwedo {
   margin-top: 20px;
   color: var(--col-off-white);
+}
+.title {
+  font-weight: 800;
 }
 @media (max-width: 1200px) {
   .purpose {
